@@ -10,12 +10,14 @@ export class Game {
 	}
 
 	public tick(time: number) {
-		window.requestAnimationFrame(t => this.tick(t));
 		const now = Math.floor(time);
-		if (now - this.last > 250) {
+		const numTicks = Math.floor((now - this.last) / 250);
+		if (numTicks > 0) {
+			console.log('calculate ' + numTicks);
 			this.update();
-			this.last += 250;
+			this.last += numTicks * 250;
 		}
+		window.requestAnimationFrame(t => this.tick(t));
 	}
 
 	private update() {
