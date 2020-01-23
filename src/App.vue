@@ -7,7 +7,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import Echo from '@/components/Echo.vue';
-import { Game } from '@/game/Game';
+import Game from '@/game/Game';
 
 @Component({
 	components: { Echo }

@@ -13,8 +13,9 @@ module.exports = {
 		'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
 		'indent': ['error', 'tab'],
 		'no-tabs': ['error', { 'allowIndentationTabs': true }],
-		'space-before-function-paren': 0,
-		'semi': ['error', 'always']
+		'space-before-function-paren': 'off',
+		'semi': 'off',
+		'@typescript-eslint/semi': ['error', 'always']
 	},
 	parserOptions: {
 		parser: '@typescript-eslint/parser'
