@@ -1,3 +1,8 @@
+import Job from '@/game/Job';
+
 export default interface State {
-	ticks: number
+	jobs: {
+		group1: Job[]
+	},
+	activeJob: Job | null
 }
