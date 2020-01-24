@@ -20,7 +20,7 @@ export default class App extends Vue {
 		return this.game.state;
 	}
 
-	private chooseJob(job: Job) {
+	public chooseJob(job: Job) {
 		this.state.activeJob = job;
 	}
 
