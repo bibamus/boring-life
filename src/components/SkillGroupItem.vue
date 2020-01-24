@@ -1,10 +1,12 @@
 <template>
-	<div>
-		<span>{{skill.name}}</span>
-		<b-progress :max="skill.expNeeded">
+	<div class="d-flex align-items-center">
+		<div>{{skill.name}}</div>
+		<b-progress :max="skill.expNeeded" class="w-100 m-2">
 			<b-progress-bar :value="skill.exp" style="transition: none"/>
 		</b-progress>
-		<b-button v-on:click="$emit('choose',skill)">Choose</b-button>
+		<div>
+			<b-button size="sm" v-on:click="$emit('choose',skill)">Choose</b-button>
+		</div>
 	</div>
 </template>
 

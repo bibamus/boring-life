@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<SkillGroupItem v-on:choose="$emit('choose',skill)" v-for="skill in skills" :skill="skill" :key="skill.name"/>
+		<SkillGroupItem class="mb-1" v-on:choose="$emit('choose',skill)" v-for="skill in skills" :skill="skill" :key="skill.name"/>
 	</div>
 </template>
 
