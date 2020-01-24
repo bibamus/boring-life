@@ -1,8 +1,10 @@
 <template>
 	<div class="d-flex justify-content-between align-items-center">
 		<span class="text-nowrap">{{skill.name}} : {{skill.level}}</span>
-		<b-progress :max="skill.expNeeded" class="w-100 m-2">
-			<b-progress-bar :value="skill.exp" style="transition: none"/>
+		<b-progress :max="skill.expNeeded" class="w-100 m-2" precision="0">
+			<b-progress-bar :value="skill.exp" style="transition: none">
+				{{Math.floor(skill.exp)}} / {{skill.expNeeded}}
+			</b-progress-bar>
 		</b-progress>
 		<div>
 			<b-button :disabled="isActive" size="sm" v-on:click="$emit('choose',skill)">Choose</b-button>

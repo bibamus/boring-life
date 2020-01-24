@@ -38,6 +38,6 @@ export default class Skill {
 	private levelUp() {
 		this.level++;
 		this._exp = this.exp - this.expNeeded;
-		this.expNeeded = 10 * Math.pow(1.1, this.level);
+		this.expNeeded = Math.floor(10 * Math.pow(1.1, this.level));
 	}
 }
