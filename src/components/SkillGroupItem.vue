@@ -1,6 +1,6 @@
 <template>
-	<div class="d-flex align-items-center">
-		<div>{{skill.name}}</div>
+	<div class="d-flex justify-content-between align-items-center">
+		<span class="text-nowrap">{{skill.name}} : {{skill.level}}</span>
 		<b-progress :max="skill.expNeeded" class="w-100 m-2">
 			<b-progress-bar :value="skill.exp" style="transition: none"/>
 		</b-progress>

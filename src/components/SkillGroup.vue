@@ -4,7 +4,7 @@
 				:isActive="skill.name === (activeSkill ? activeSkill.name : '')" :key="skill.name"
 				:skill="skill"
 				class="mb-1"
-				v-for="skill in skills"
+				v-for="skill in unlockedSkills"
 				v-on:choose="$emit('choose',skill)"/>
 	</div>
 </template>
@@ -20,6 +20,10 @@ import SkillGroupItem from '@/components/SkillGroupItem.vue';
 export default class SkillGroup extends Vue {
 	@Prop() skills!: Skill[];
 	@Prop() activeSkill!: Skill;
+
+	get unlockedSkills(): Skill[] {
+		return this.skills.filter(skill => skill.unlocked);
+	}
 }
 </script>
 

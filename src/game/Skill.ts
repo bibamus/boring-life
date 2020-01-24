@@ -1,10 +1,21 @@
+export interface Unlock {
+	skill: Skill;
+	level: number;
+}
+
 export default class Skill {
-	public name: String;
+	public name: string;
 	public level = 0;
 	public expNeeded = 10;
+	unlocks: Unlock[];
 
-	constructor(name: String) {
+	constructor(name: string, unlocks: Unlock[]) {
 		this.name = name;
+		this.unlocks = unlocks;
+	}
+
+	get unlocked(): boolean {
+		return this.unlocks.every(unlock => unlock.skill.level >= unlock.level);
 	}
 
 	private _exp = 0;

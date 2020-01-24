@@ -5,14 +5,18 @@ export default class Game {
 	state: State;
 
 	last: number = 0;
+
+	job1 = new Job('job1', [], 'e1', 0);
+	job2 = new Job('job2', [{ skill: this.job1, level: 5 }], 'e1', 0);
+
 	private tickLength = 100;
 
 	constructor() {
 		this.state = {
 			jobs: {
 				group1: [
-					new Job('job1', 'e1', 0),
-					new Job('job2', 'e1', 0)
+					this.job1,
+					this.job2
 				]
 			},
 			activeJob: null
