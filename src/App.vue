@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<SkillGroup v-on:choose="chooseJob($event)" :skills="state.jobs.group1"/>
+		<SkillGroup :activeSkill="state.activeJob" :skills="state.jobs.group1" v-on:choose="chooseJob($event)"/>
 	</div>
 </template>
 

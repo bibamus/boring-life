@@ -1,6 +1,11 @@
 <template>
 	<div>
-		<SkillGroupItem class="mb-1" v-on:choose="$emit('choose',skill)" v-for="skill in skills" :skill="skill" :key="skill.name"/>
+		<SkillGroupItem
+				:isActive="skill.name === (activeSkill ? activeSkill.name : '')" :key="skill.name"
+				:skill="skill"
+				class="mb-1"
+				v-for="skill in skills"
+				v-on:choose="$emit('choose',skill)"/>
 	</div>
 </template>
 
@@ -14,6 +19,7 @@ import SkillGroupItem from '@/components/SkillGroupItem.vue';
 })
 export default class SkillGroup extends Vue {
 	@Prop() skills!: Skill[];
+	@Prop() activeSkill!: Skill;
 }
 </script>
 

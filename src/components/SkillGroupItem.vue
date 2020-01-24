@@ -5,7 +5,7 @@
 			<b-progress-bar :value="skill.exp" style="transition: none"/>
 		</b-progress>
 		<div>
-			<b-button size="sm" v-on:click="$emit('choose',skill)">Choose</b-button>
+			<b-button :disabled="isActive" size="sm" v-on:click="$emit('choose',skill)">Choose</b-button>
 		</div>
 	</div>
 </template>
@@ -17,6 +17,7 @@ import Skill from '@/game/Skill';
 @Component
 export default class SkillGroupItem extends Vue {
 	@Prop() skill!: Skill;
+	@Prop() isActive!: boolean;
 }
 </script>
 
