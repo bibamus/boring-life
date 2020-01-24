@@ -6,14 +6,12 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import Echo from '@/components/Echo.vue';
 import Game from '@/game/Game';
-import SkillItem from '@/components/SkillGroupItem.vue';
 import SkillGroup from '@/components/SkillGroup.vue';
 import Job from '@/game/Job';
 
 @Component({
-	components: { SkillGroup, SkillItem, Echo }
+	components: { SkillGroup }
 })
 export default class App extends Vue {
 	private game: Game = new Game();
